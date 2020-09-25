@@ -70,11 +70,11 @@ def searchLab(lab_prefix):
         
     
     
-    result={'-The number of opened PR is': opened_pr,
-    '-The number of closed PR is': closed_pr,
-    'The percentage of completeness is': percentage,
-    'Number of missing PR is': missing_pr,
-    'The instructor grade time in hours is': queue_time
+    result={'opened_pr': opened_pr,
+    'closed_pr': closed_pr,
+    'percentage_completed': percentage,
+    'missing_pr': missing_pr,
+    'grade_time': queue_time
     
     }
   
