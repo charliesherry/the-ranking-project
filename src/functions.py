@@ -17,8 +17,10 @@ def get_names():
     lista = new_list
     return lista
 
-#Funcion segunda api que va en la siguiente 
 def getcoment(x,apiKey=os.getenv("TOKEN")):
+    """
+    This function obtains the comments in json format from every issue in datamad0820.
+    """
     headers = {
         "Authorization": f"Bearer {apiKey}"
     }
@@ -26,13 +28,18 @@ def getcoment(x,apiKey=os.getenv("TOKEN")):
     coments = coment.json()
     return coments
 
-#Para sacar el segundo usuario con Regex. 
 def segundo(comment):
+    """
+    This function obtains the second user in case it exists.
+    """
     try:
         return re.findall('@\w*-?\w+',comment[0]['body'])
     except:
         return None
 def grade(comment):
+    """
+    This function obtains the grade assigned to each pull request.
+    """
     try:
         z= re.findall(r'grade:.*-',comment[0]['body'])
         z = str(z).split(':')
@@ -40,14 +47,20 @@ def grade(comment):
         return z[0]
     except:
         return None
-#Para sacar el nombre del instructor
+
 def instructor(comment):
+    """
+    This function obtains the name of the instructor assigned to each PR.
+    """
     try:
         return comment[0]['user']['login']
     except:
         return None
-#Para sacar el meme
+
 def meme(comment):
+    """
+    This function obtains the meme URL of each comment from the instructor.
+    """
     try:
         try:
             z = re.findall(r'https:.*jpg|.*png|.*jpeg',comment[0]['body'])
@@ -61,8 +74,11 @@ def meme(comment):
     except:
         return None  
 
-#Funcion para sacar la informacion de las dos APIS
+
 def getpull(x,apiKey=os.getenv("TOKEN")):
+    """
+    This function obtains the full lab analysis from the previous defined functions.
+    """
     headers = {
         "Authorization": f"Bearer {apiKey}"
     }
