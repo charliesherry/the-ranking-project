@@ -11,16 +11,16 @@ def welcome():
                                                                                 "output": "The object ID assigned to that student",
                                                                                 "extra" : "If the student is already created, a message will pop up clarifying it."},
                                             "/student/all": {"input" : "No input required",
-                                                            "Ouput": "A list with all the students in this bootcamp",
+                                                            "ouput": "A list with all the students in this bootcamp",
                                                             "extra" : "Id from each student is removed to make the list cleaner"},
                                             "/lab/create/<lab_prefix>":{"input" : "A lab's name",
-                                                                                "Ouput": "The object ID assigned to that student",
+                                                                                "ouput": "The object ID assigned to that student",
                                                                                 "extra" : "If the student is already created, a message will pop up clarifying it."},
                                             "/lab/<lab_prefix>/search":{"input" : "A lab's name",
-                                                                        "Ouput": "Lab analysis",
+                                                                        "ouput": "Lab analysis",
                                                                         "extra" : "Error 404 : List of distinct memes was not found"},
                                             "/lab/randomeme/<lab_prefix>":{"input" : "A lab's name",
-                                                                            "Ouput": "A random meme URL from that specific lab",
+                                                                            "ouput": "A random meme URL from that specific lab",
                                                                             "extra" : "No Id included for cleaner output"}
 
                                                     }
